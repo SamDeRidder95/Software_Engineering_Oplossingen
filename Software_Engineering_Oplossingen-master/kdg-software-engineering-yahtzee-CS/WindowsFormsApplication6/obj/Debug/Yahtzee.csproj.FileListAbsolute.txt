@@ -1,0 +1,10 @@
+C:\Users\samde\Desktop\multimedia 2de jaar\SoftwareEngineering\Nieuwe map\kdg-software-engineering-yahtzee-CS\WindowsFormsApplication6\bin\Debug\WindowsFormsApplication6.exe.config
+C:\Users\Joppe\Documents\School\2\Software engeniering\Software_Engineering_Oplossingen-master\kdg-software-engineering-yahtzee-CS\WindowsFormsApplication6\bin\Debug\WindowsFormsApplication6.exe.config
+C:\Users\Joppe\Documents\School\2\Software engeniering\Software_Engineering_Oplossingen-master\kdg-software-engineering-yahtzee-CS\WindowsFormsApplication6\bin\Debug\WindowsFormsApplication6.exe
+C:\Users\Joppe\Documents\School\2\Software engeniering\Software_Engineering_Oplossingen-master\kdg-software-engineering-yahtzee-CS\WindowsFormsApplication6\bin\Debug\WindowsFormsApplication6.pdb
+C:\Users\Joppe\Documents\School\2\Software engeniering\Software_Engineering_Oplossingen-master\kdg-software-engineering-yahtzee-CS\WindowsFormsApplication6\obj\Debug\WindowsFormsApplication6.Properties.Resources.resources
+C:\Users\Joppe\Documents\School\2\Software engeniering\Software_Engineering_Oplossingen-master\kdg-software-engineering-yahtzee-CS\WindowsFormsApplication6\obj\Debug\Yahtzee.DiceUI.resources
+C:\Users\Joppe\Documents\School\2\Software engeniering\Software_Engineering_Oplossingen-master\kdg-software-engineering-yahtzee-CS\WindowsFormsApplication6\obj\Debug\Yahtzee.csproj.GenerateResource.Cache
+C:\Users\Joppe\Documents\School\2\Software engeniering\Software_Engineering_Oplossingen-master\kdg-software-engineering-yahtzee-CS\WindowsFormsApplication6\obj\Debug\WindowsFormsApplication6.exe
+C:\Users\Joppe\Documents\School\2\Software engeniering\Software_Engineering_Oplossingen-master\kdg-software-engineering-yahtzee-CS\WindowsFormsApplication6\obj\Debug\WindowsFormsApplication6.pdb
+C:\Users\Joppe\Documents\School\2\Software engeniering\Software_Engineering_Oplossingen-master\kdg-software-engineering-yahtzee-CS\WindowsFormsApplication6\obj\Debug\Yahtzee.csprojResolveAssemblyReference.cache
