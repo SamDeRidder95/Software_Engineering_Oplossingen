@@ -11,6 +11,7 @@ namespace Yahtzee
         protected DiceUI diceUI;
         protected DiceModel diceModel;
         protected Random randomGenerator;
+        protected int randomNumber;
 
         public DiceController()
         {
@@ -37,13 +38,191 @@ namespace Yahtzee
         public int throwDice()
         {
             // Generate new random number
-            int randomNumber = this.randomGenerator.Next(1, 7);
+            randomNumber = this.randomGenerator.Next(1, 7);
 
             // Update the model
             this.diceModel.value = randomNumber;
 
             // Return the value
             return randomNumber;
+        }
+
+        public int AddUpDice(int DieNumber, DiceController[] myDice)
+        {
+            int Sum = 0;
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (myDice[i].randomNumber == DieNumber)
+                {
+                    Sum += DieNumber;
+                }
+            }
+
+            return Sum;
+        }
+
+        public int ThreeOfAKind(DiceController[] myDice)
+        {
+            int Sum = 0;
+
+            bool ThreeOfAKind = false;
+
+            for (int i = 1; i <= 6; i++)
+            {
+                int Count = 0;
+                for (int j = 0; j < 5; j++)
+                {
+                    if (myDice[j].randomNumber == i)
+                        Count++;
+
+                    if (Count > 2)
+                        ThreeOfAKind = true;
+                }
+            }
+
+            if (ThreeOfAKind)
+            {
+                for (int k = 0; k < 5; k++)
+                {
+                    Sum += myDice[k].randomNumber;
+                }
+            }
+
+            return Sum;
+        }
+
+        public int FullHouse(DiceController[] myDice)
+        {
+            int Sum = 0;
+
+            int[] i = new int[5];
+
+            i[0] = myDice[0].randomNumber;
+            i[1] = myDice[1].randomNumber;
+            i[2] = myDice[2].randomNumber;
+            i[3] = myDice[3].randomNumber;
+            i[4] = myDice[4].randomNumber;
+
+            Array.Sort(i);
+
+            if ((((i[0] == i[1]) && (i[1] == i[2])) && // Three of a Kind
+                 (i[3] == i[4]) && // Two of a Kind
+                 (i[2] != i[3])) ||
+                ((i[0] == i[1]) && // Two of a Kind
+                 ((i[2] == i[3]) && (i[3] == i[4])) && // Three of a Kind
+                 (i[1] != i[2])))
+            {
+                Sum = 25;
+            }
+
+            return Sum;
+        }
+
+        public int LargeStraight(DiceController[] myDice)
+        {
+            int Sum = 0;
+
+            int[] i = new int[5];
+
+            i[0] = myDice[0].randomNumber;
+            i[1] = myDice[1].randomNumber;
+            i[2] = myDice[2].randomNumber;
+            i[3] = myDice[3].randomNumber;
+            i[4] = myDice[4].randomNumber;
+
+            Array.Sort(i);
+
+            if (((i[0] == 1) &&
+                 (i[1] == 2) &&
+                 (i[2] == 3) &&
+                 (i[3] == 4) &&
+                 (i[4] == 5)) ||
+                ((i[0] == 2) &&
+                 (i[1] == 3) &&
+                 (i[2] == 4) &&
+                 (i[3] == 5) &&
+                 (i[4] == 6)))
+            {
+                Sum = 40;
+            }
+
+            return Sum;
+        }
+
+        public int SmallStraight(DiceController[] myDice)
+        {
+            int Sum = 0;
+
+            int[] i = new int[5];
+
+            i[0] = myDice[0].randomNumber;
+            i[1] = myDice[1].randomNumber;
+            i[2] = myDice[2].randomNumber;
+            i[3] = myDice[3].randomNumber;
+            i[4] = myDice[4].randomNumber;
+
+            Array.Sort(i);
+
+            for (int j = 0; j < 4; j++)
+            {
+                int temp = 0;
+                if (i[j] == i[j + 1])
+                {
+                    temp = i[j];
+
+                    for (int k = j; k < 4; k++)
+                    {
+                        i[k] = i[k + 1];
+                    }
+
+                    i[4] = temp;
+                }
+            }
+
+            if (((i[0] == 1) && (i[1] == 2) && (i[2] == 3) && (i[3] == 4)) ||
+                ((i[0] == 2) && (i[1] == 3) && (i[2] == 4) && (i[3] == 5)) ||
+                ((i[0] == 3) && (i[1] == 4) && (i[2] == 5) && (i[3] == 6)) ||
+                ((i[1] == 1) && (i[2] == 2) && (i[3] == 3) && (i[4] == 4)) ||
+                ((i[1] == 2) && (i[2] == 3) && (i[3] == 4) && (i[4] == 5)) ||
+                ((i[1] == 3) && (i[2] == 4) && (i[3] == 5) && (i[4] == 6)))
+            {
+                Sum = 30;
+            }
+
+            return Sum;
+        }
+
+        public int Yahtzee(DiceController[] myDice)
+        {
+            int Sum = 0;
+
+            for (int i = 1; i <= 6; i++)
+            {
+                int Count = 0;
+                for (int j = 0; j < 5; j++)
+                {
+                    if (myDice[j].randomNumber == i)
+                        Count++;
+
+                    if (Count > 4)
+                        Sum = 50;
+                }
+            }
+
+            return Sum;
+        }
+
+        public int AddUpChance(DiceController[] myDice)
+        {
+            int Sum = 0;
+
+            for (int i = 0; i < 5; i++)
+            {
+                Sum += myDice[i].randomNumber;
+            }
+
+            return Sum;
         }
     }
 }
